@@ -28,6 +28,23 @@ resource "random_password" "main" {
     special = true
     override_special = "#!()@"
 }
+// Store Password
+resource "aws_secretsmanager_secret" "rds_password" {
+    name = "/prod/rds/password"
+    description = "Password for my RDS Database"
+    recovery_window_in_days = 0
+}
+
+resource "aws_secretsmanager_secret_version" "rds_password" {
+    secret_id = aws_secretsmanager_secret.rds_password.id
+    secret_string = random_password.main.result
+}
+
+// Retrive Password
+data "aws_secretsmanager_secret_version" "rds_password" {
+    secret_id = aws_secretsmanager_secret.rds_password.id
+    
+}
 
 #--------
 output "rds_address" {
