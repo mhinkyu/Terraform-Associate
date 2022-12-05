@@ -10,11 +10,11 @@ provider "aws" {
 }
 
 data "aws_ami" "latest_amazon_linux" {
-    owners = []
+    owners = ["137112412989"]
     most_recent = true 
     filter {
       name = "name"
-      values = []
+      values = ["amzn2-ami-kernel-5.10-hvm-*-x86_64-gp2"]
     }
 }
 
