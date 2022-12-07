@@ -34,7 +34,7 @@ resource "aws_instance" "web" {
     tags = merge(var.tags, { Name = "${var.tags["Environment"]}-Webserver built by Terraform"})
 
     lifecycle {
-      create_before_destory = true
+      create_before_destroy = true
     }
 }
 
@@ -60,5 +60,5 @@ resource "aws_security_group" "web" {
         protocol = "-1"
         cidr_blocks = ["0.0.0.0/0"]
     }
-    tags = merge(var.tags, { Name- "${var.tags["Environment"]}-Webserver SG by Terraform"})
+    tags = merge(var.tags, { Name = "${var.tags["Environment"]}-Webserver SG by Terraform"})
 }
