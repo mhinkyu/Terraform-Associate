@@ -8,7 +8,7 @@
 # terraform apply -var-file="vars_staging.tfvars"
 # terraform apply -var-file="vars_prod.tfvars"
 #
-# Made by Denis Astahov
+# Made by Mhinkyu Kim
 #----------------------------------------------------------
 provider "aws" {
     region = var.aws_region
