@@ -29,7 +29,7 @@ output "users_unique_id_name_custom" {
 }
 output "server_id_ip" {
     value = [
-        for x in aws_instance.my_server
+        for x in aws_instance.my_server :
         "Server with ID: ${x.id} has Public IP: ${x.public_ip}"
     ]
 }

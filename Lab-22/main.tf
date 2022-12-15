@@ -3,7 +3,7 @@
 #
 # Loop Construct: for x in xyz:
 #
-# Made by Denis Astahov
+# Made by Mhinkyu Kim
 #----------------------------------------------------------
 provider "aws" {
     region = "us-west-2"
