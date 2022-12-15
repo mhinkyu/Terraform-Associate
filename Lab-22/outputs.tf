@@ -6,14 +6,6 @@ output "instances_public_ips" {
     value = aws_instances.my_server[*].public_ip
 }
 
-output "server_id_ip" {
-    value = {
-        for x in aws_instance.my_server
-        "Server with Id:
-    }
-}
-
-
 output "server_id_ip_map" {
   value = {
         for x in aws_instance.my_server :
@@ -34,4 +26,10 @@ output "users_unique_id_name_custom" {
     user.unique_id => user.name // "AIDA4BML4S5345K74HQFF" : "john"
     if length(user.name) < 7
   }
+}
+output "server_id_ip" {
+    value = {
+        for x in aws_instance.my_server
+        "Server with Id:
+    }
 }
